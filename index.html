@@ -37,11 +37,11 @@
           <span class="checkbox">
             <input id="accept-tou" type="checkbox" checked="checked" name="accept-tou" value="yes" />
           </span>
-          <label class="normal">I accept the <a href="javascript:void(0)" id="show-tou">Terms of Use</a></label>
+          <label class="normal">I accept the <a href="#" id="show-tou">Terms of Use</a></label>
 
           <div class="tou-wrapper" id="tou">
             <div class="tou well">
-              <p>Terms of Use</p>
+              <p><strong>Terms of Use</strong></p>
               <p>By accessing the wireless network, you acknowledge that you're of legal age, you have read and understood and agree to be bound by this agreement</p>
               <ul>
                 <li>The wireless network service is provided by the property owners and is completely at their discretion. Your access to the network may be blocked, suspended, or terminated at any time for any reason.</li>
@@ -69,16 +69,15 @@
 
     $(function() {
       $('#tou').addClass('hidden');
-      $('#show-tou').click(function() {
+      $('#show-tou').on('click', function(event) {
+        event.preventDefault();
         $('#tou').toggleClass('hidden');
       });
-      $('#accept-tou').click(function() {
-        if (!$('#accept-tou').checked()) {
-          $('input.requires-tou').disable();
-        }
-        else {
-          $('input.requires-tou').enable();
-        }
+      $('#accept-tou').on('click', function() {
+        isChecked = $('#accept-tou').checked();
+        $('input.requires-tou').attr({
+          'disabled': !isChecked
+        });
       })
     });
   </script>

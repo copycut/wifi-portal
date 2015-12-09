@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Required - Guest Access</title>
+  <link rel="stylesheet" href="assets/styles/woorank-theme.min.css">
+  <link rel="stylesheet" href="assets/styles/index.css">
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/guest.js"></script>
+</head>
+<body>
+  <svg class="hidden" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink>
+    <symbol id=logo viewbox="0 0 110 20"><g fill=none fill-rule=evenodd><path d="M57.2 6c-2.7 0-4.8 1.3-5.9 3.4-1.1-2-3.2-3.4-5.9-3.4-2.8 0-5 1.4-6 3.6l-1.8 3.9-3.5-8.2-3.6 8.2-3.3-7.1H24l6.6 13.1 3.5-7.9 3.5 7.9 2-4c1.1 2 3.2 3.3 5.8 3.3 2.7 0 4.8-1.3 5.9-3.4 1.1 2 3.2 3.4 5.9 3.4 3.8 0 6.6-2.7 6.6-6.4S61 6 57.2 6zM45.4 16.2c-2.2 0-3.9-1.6-3.9-3.9s1.7-3.9 3.9-3.9 3.9 1.6 3.9 3.9-1.7 3.9-3.9 3.9zm11.8 0c-2.2 0-3.9-1.6-3.9-3.9s1.7-3.9 3.9-3.9 3.9 1.6 3.9 3.9-1.7 3.9-3.9 3.9zM73.4 6.4c-.6-.3-1.4-.4-2.3-.4-1.7 0-2.9.3-3.6 1.3v-1h-2.7v12.1h2.7v-5.5c0-2.7 1.2-4.4 2.9-4.4.3 0 .7 0 1.1.1.5-.9 1.1-1.6 1.9-2.2zM81.8 7.4c-.6-.7-2.1-1.4-3.9-1.4-3.4 0-6.1 2.7-6.1 6.4s2.7 6.4 6.1 6.4c1.7 0 3.3-.7 3.9-1.4v1.1h2.7V6.4h-2.7v1zm-3.6 8.8c-2.3 0-3.7-1.8-3.7-3.9 0-2.1 1.4-3.9 3.7-3.9 2.2 0 3.7 1.7 3.7 3.9s-1.5 3.9-3.7 3.9zM92.5 6c-1.3 0-2.8.4-3.8 1.8V6.3H86v12.1h2.7v-6.7c0-2.1 1.5-3.2 3.2-3.2 1.8 0 2.9 1.1 2.9 3.2v6.7h2.7v-7.6c0-2.9-2.1-4.8-5-4.8zM104.9 12.2l-.2-.2 5.1-5.7h-3.4l-4.1 4.6h-.7V.2l-2.7 2.7v15.6h2.7v-5.1h.7l4.1 5.1h3.4c.1-.1-3.2-4.2-4.9-6.3z" fill=#000></path><path d="M7.9 20c6.5 0 11.9-7.8 11.9-7.8S14.4 4.4 7.9 4.4C3.6 4.4 0 8 0 12.2 0 16.4 3.7 20 7.9 20z" fill=#428BCA></path><path d="M6.8 14.8l.7.7.7-.7 4-3.9c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0l-3.3 3.2-1.3-1.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l2 2z" fill=#FFF></path></g></symbol>
+  </svg>
+
+  <div class="container page-container">
+    <svg class="icon icon-logo">
+      <use xlink:href="#logo"></use>
+    </svg>
+
+    <div class="form-container">
+      <form name="input" method="post" action="login">
+        <h2 class="text-center">Please enter the password and check terms of use.</h2>
+
+        <div class="form-group password-box">
+          <label for="Password">Guest Password</label>
+          <div class="input-group">
+            <input id="Password" name="password" type="password" class="form-control" value="" autocomplete="off" />
+            <span class="input-group-btn">
+              <input name="connect" type="submit" value="Connect" id="connect" class="btn btn-primary requires-tou" />
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group accept-tou">
+          <span class="checkbox">
+            <input id="accept-tou" type="checkbox" checked="checked" name="accept-tou" value="yes" />
+          </span>
+          <label class="normal">I accept the <a href="javascript:void(0)" id="show-tou">Terms of Use</a></label>
+
+          <div class="tou-wrapper" id="tou">
+            <div class="tou well">
+              <p>Terms of Use</p>
+              <p>By accessing the wireless network, you acknowledge that you're of legal age, you have read and understood and agree to be bound by this agreement</p>
+              <ul>
+                <li>The wireless network service is provided by the property owners and is completely at their discretion. Your access to the network may be blocked, suspended, or terminated at any time for any reason.</li>
+                <li>You agree not to use the wireless network for any purpose that is unlawful and take full responsibility of your acts.</li>
+                <li>The wireless network is provided &quot;as is&quot; without warranties of any kind, either expressed or implied. </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('input').keypress(function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if ( (code==13) || (code==10)) {
+          jQuery(this).blur();
+          return false;
+        }
+      });
+    });
+
+    $(function() {
+      $('#tou').addClass('hidden');
+      $('#show-tou').click(function() {
+        $('#tou').toggleClass('hidden');
+      });
+      $('#accept-tou').click(function() {
+        if (!$('#accept-tou').checked()) {
+          $('input.requires-tou').disable();
+        }
+        else {
+          $('input.requires-tou').enable();
+        }
+      })
+    });
+  </script>
+
+</body>
+</html>

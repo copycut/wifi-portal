@@ -6,9 +6,11 @@
 
 .icon-logo {
   display: block;
-  width: 340px;
-  height: 70px;
   margin: 0 auto;
+  width: 70%;
+  height: 30%;
+  max-width: 340px;
+  max-height: 70px;
 }
 
 .accept-tou label {
